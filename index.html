@@ -36,3 +36,38 @@
     <script src="script.js"></script>
 </body>
 </html>
+<div id="orientation-warning">
+        📱<br>핸드폰을 가로로 눕혀주세요!
+    </div>
+</div> ```
+
+**`style.css` 수정 (가장 아래에 추가):**
+```css
+/* 가로 모드 비율에 맞게 컨테이너 수정 */
+#game-container {
+    max-width: 100%; /* 기존 480px 제한 해제 */
+    width: 100vw;
+    height: 100vh;
+}
+
+/* 화면 회전 안내창 스타일 */
+#orientation-warning {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: #333;
+    color: white;
+    display: none; /* 기본은 숨김 */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    z-index: 9999;
+}
+
+/* 세로 모드일 때만 안내창 띄우기 (마법의 코드!) */
+@media screen and (orientation: portrait) {
+    #orientation-warning {
+        display: flex;
+    }
+}
