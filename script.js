@@ -18,13 +18,13 @@ let timeLeft;
 const timeLimit = 5000; // 스테이지당 5초
 let isGameRunning = false;
 
-// 스테이지 데이터 (이미지 파일명 매칭)
+// 스테이지 데이터 (변경된 영어 파일명으로 매칭)
 const stages = [
-    { id: 1, type: 'swipe', img: '스테이지1.jpg', text: 'SWIPE\n신발을 벗으세요', failMsg: '하늘의 별이 되었습니다...' },
-    { id: 2, type: 'hold', img: '스테이지2.jpg', text: 'HOLD\n어른을 기다리세요', failMsg: '김치싸닥션을 맞았습니다!' },
-    { id: 3, type: 'drag', img: '스테이지3.jpg', text: 'DRAG & DROP\n두 손으로 받으세요', failMsg: '레이저에 타버렸습니다!' },
-    { id: 4, type: 'tap', img: '스테이지4.jpg', text: 'TAP\n자리를 양보하세요', failMsg: '메두사가 되어 돌로 굳었습니다.' },
-    { id: 5, type: 'turn', img: '스테이지5.jpg', text: 'TURN\n고개를 돌리세요', failMsg: '상사의 브레스에 당했습니다!' }
+    { id: 1, type: 'swipe', img: 'stage1.jpg', text: 'SWIPE\n신발을 벗으세요', failMsg: '하늘의 별이 되었습니다...' },
+    { id: 2, type: 'hold', img: 'stage2.jpg', text: 'HOLD\n어른을 기다리세요', failMsg: '김치싸닥션을 맞았습니다!' },
+    { id: 3, type: 'drag', img: 'stage3.jpg', text: 'DRAG & DROP\n두 손으로 받으세요', failMsg: '레이저에 타버렸습니다!' },
+    { id: 4, type: 'tap', img: 'stage4.jpg', text: 'TAP\n자리를 양보하세요', failMsg: '메두사가 되어 돌로 굳었습니다.' },
+    { id: 5, type: 'turn', img: 'stage5.jpg', text: 'TURN\n고개를 돌리세요', failMsg: '상사의 브레스에 당했습니다!' }
 ];
 
 // 화면 전환 함수
