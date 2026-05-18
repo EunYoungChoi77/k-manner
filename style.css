@@ -94,3 +94,16 @@ button:active { transform: translateY(5px); box-shadow: none; }
     position: absolute; width: 80px; height: 80px; background: rgba(0,255,0,0.3); border-radius: 50%;
 }
 .tap-zone.wrong { background: rgba(255,0,0,0.3); }
+/* 둥둥 떠다니는(숨쉬는) 애니메이션 정의 */
+@keyframes breathing {
+    0%   { transform: translateY(0px); }
+    50%  { transform: translateY(-10px); } /* 위로 10px 이동 */
+    100% { transform: translateY(0px); }
+}
+
+/* 캐릭터에게 애니메이션 달아주기 */
+.character {
+    position: absolute;
+    width: 150px; /* 캐릭터 크기 */
+    animation: breathing 2s infinite ease-in-out; /* 2초마다 무한 반복 */
+}
