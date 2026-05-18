@@ -107,3 +107,28 @@ button:active { transform: translateY(5px); box-shadow: none; }
     width: 150px; /* 캐릭터 크기 */
     animation: breathing 2s infinite ease-in-out; /* 2초마다 무한 반복 */
 }
+/* 캐릭터 숨쉬기 애니메이션 */
+@keyframes breathing {
+    0%   { transform: translate(-50%, 0px); }
+    50%  { transform: translate(-50%, -15px); } /* 위로 15px 둥둥 */
+    100% { transform: translate(-50%, 0px); }
+}
+
+/* 캐릭터 공통 스타일 */
+.character-img {
+    position: absolute;
+    left: 50%; /* 가로 중앙 정렬 */
+    bottom: 15%; /* 화면 아래에서 15% 띄움 */
+    height: 40vh; /* 캐릭터 크기 (화면 높이의 40%) */
+    object-fit: contain;
+    animation: breathing 1.5s infinite ease-in-out; /* 1.5초마다 무한 반복 */
+    pointer-events: none; /* 터치 방해 금지 */
+    z-index: 10;
+}
+
+/* 각 스테이지별 캐릭터 위치/크기 미세조정 (필요시 수치 변경) */
+.char-stage1 { height: 45vh; bottom: 20%; }
+.char-stage2 { height: 50vh; bottom: -5%; } /* 식탁 스테이지는 더 크게, 아래로 */
+.char-stage3 { height: 40vh; bottom: 15%; }
+.char-stage4 { height: 35vh; bottom: 10%; }
+.char-stage5 { height: 45vh; bottom: 10%; }
