@@ -1,38 +1,49 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Dumb Ways to Die: K-manner</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>K-Manner Survival</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="game-container">
-        <div id="screen-start" class="screen active">
-            <h1>Dumb Ways to Die<br><span>: K-manner</span></h1>
-            <button id="btn-start">START</button>
-            <p class="notice">*모바일 기기에서 플레이해주세요.<br>*Stage 5를 위해 기기 센서 권한이 필요합니다.</p>
-        </div>
 
-        <div id="screen-game" class="screen">
-            <div id="timer-bar"><div id="timer-fill"></div></div>
-            <div id="instruction">명령어</div>
-            
-            <div id="interaction-layer"></div>
-        </div>
+<div id="app">
 
-        <div id="screen-fail" class="screen">
-            <h2 id="fail-message">죽었습니다!</h2>
-            <button id="btn-retry">다시 하기</button>
-        </div>
+  <!-- 메인 -->
+  <div id="main" class="screen active">
+    <h1>K-MANNER</h1>
+    <button id="start">START</button>
+  </div>
 
-        <div id="screen-clear" class="screen">
-            <h2>K-예절 마스터!</h2>
-            <p>모든 스테이지를 통과했습니다.</p>
-            <button id="btn-home">처음으로</button>
-        </div>
-    </div>
+  <!-- HUD -->
+  <div id="hud">
+    <div id="timer"></div>
+  </div>
 
-    <script src="script.js"></script>
+  <!-- 게임 -->
+  <div id="stage" class="screen">
+    <img id="bg" src="assets/bg1.png">
+    <div id="game-area"></div>
+  </div>
+
+  <!-- 게임오버 -->
+  <div id="over" class="screen">
+    <h2>GAME OVER</h2>
+    <button id="retry">RETRY</button>
+  </div>
+
+  <!-- 컷씬 -->
+  <div id="cut" class="hidden">
+    <div id="cut-text"></div>
+  </div>
+
+  <!-- 사운드 -->
+  <audio id="sfx-ok" src="assets/success.mp3"></audio>
+  <audio id="sfx-no" src="assets/fail.mp3"></audio>
+
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
